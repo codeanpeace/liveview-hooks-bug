@@ -20,6 +20,36 @@ defmodule HooksWeb.CoreComponents do
   import HooksWeb.Gettext
 
   @doc """
+  Highlight
+    
+  """
+
+  attr(:id, :any, required: true)
+  attr(:trigger, :any)
+  attr(:duration, :integer)
+  slot(:inner_block)
+  attr(:rest, :global)
+
+  def highlight(assigns) do
+    IO.inspect render: assigns.id
+    assigns =
+      assign_new(assigns, :highlight, fn ->
+        if changed?(assigns, :trigger) do
+          "on"
+        else
+          "off"
+        end
+      end)
+
+    ~H"""
+    <div id={@id} data-id={@id} phx-hook="Highlight" {@rest} data-highlight={@highlight}>
+      <%= render_slot(@inner_block) %>
+    </div>
+    """
+  end
+
+
+  @doc """
   Renders a modal.
 
   ## Examples

@@ -17,7 +17,7 @@ defmodule HooksWeb.Router do
   scope "/", HooksWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", TestLive
   end
 
   # Other scopes may use custom stacks.
