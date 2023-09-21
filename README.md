@@ -1,3 +1,5 @@
+https://github.com/codeanpeace/liveview-hooks-bug/assets/2991389/4dbf83b6-66ce-4884-bbcd-9f1f3b3182dd
+
 # Hooks
 
 To start your Phoenix server:
