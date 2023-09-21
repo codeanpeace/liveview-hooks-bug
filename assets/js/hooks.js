@@ -12,7 +12,6 @@ Hooks.Highlight = {
 				this.el.setAttribute("data-highlight", "off");
 			}, 1000);
 			this.handler = handler;
-			
 		}
  }
 }

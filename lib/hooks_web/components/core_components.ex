@@ -21,11 +21,12 @@ defmodule HooksWeb.CoreComponents do
 
   @doc """
   Highlight
-    
+
   """
 
   attr(:id, :any, required: true)
   attr(:trigger, :any)
+  attr(:reset, :any)
   attr(:duration, :integer)
   slot(:inner_block)
   attr(:rest, :global)
@@ -35,8 +36,10 @@ defmodule HooksWeb.CoreComponents do
     assigns =
       assign_new(assigns, :highlight, fn ->
         if changed?(assigns, :trigger) do
+          IO.puts("~~ TURN ON ~~")
           "on"
         else
+          IO.puts("~~ TURN OFF ~~")
           "off"
         end
       end)
